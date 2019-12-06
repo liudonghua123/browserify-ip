@@ -1,21 +1,23 @@
 {
-  "name": "ip",
-  "version": "1.1.5",
-  "author": "Fedor Indutny <fedor@indutny.com>",
-  "homepage": "https://github.com/indutny/node-ip",
+  "name": "browserify-ip",
+  "version": "0.0.1",
+  "author": "Donghua liu <liudonghua123@gmail.com>",
+  "homepage": "https://github.com/liudonghua123/browserify-ip",
   "repository": {
     "type": "git",
-    "url": "http://github.com/indutny/node-ip.git"
+    "url": "http://github.com/liudonghua123/browserify-ip.git"
   },
-  "main": "lib/ip",
+  "main": "dist/ip.js",
   "devDependencies": {
+    "browserify": "^16.5.0",
     "jscs": "^2.1.1",
     "jshint": "^2.8.0",
     "mocha": "~1.3.2"
   },
   "scripts": {
-    "test": "jscs lib/*.js test/*.js && jshint lib/*.js && mocha --reporter spec test/*-test.js",
-    "fix": "jscs lib/*.js test/*.js --fix"
+    "build": "browserify -s ip src/ip.js > dist/ip.js",
+    "test": "jscs src/*.js test/*.js && jshint src/*.js && mocha --reporter spec test/*-test.js",
+    "fix": "jscs src/*.js test/*.js --fix"
   },
   "license": "MIT"
 }
