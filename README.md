@@ -1,26 +1,22 @@
 # IP  
-[![](https://badge.fury.io/js/ip.svg)](https://www.npmjs.com/package/ip)  
+[![](https://badge.fury.io/js/browserify-ip.svg)](https://www.npmjs.com/package/browserify-ip)  
 
-IP address utilities for node.js
+IP address utilities for browser, this utilities is transformed from [node-ip](https://github.com/indutny/node-ip) via [browserify](https://github.com/browserify/browserify).
+
+> Everything works except `ip.address()` because there isn't replacement `os.networkInterfaces` in browser environment.
 
 ## Installation
 
 ###  npm
 ```shell
-npm install ip
-```
-
-### git
-
-```shell
-git clone https://github.com/indutny/node-ip.git
+npm install browserify-ip
 ```
   
 ## Usage
 Get your ip address, compare ip addresses, validate ip addresses, etc.
 
 ```js
-var ip = require('ip');
+import ip = from 'browserify-ip';
 
 ip.address() // my ip address
 ip.isEqual('::1', '::0:1'); // true
@@ -64,11 +60,16 @@ ip.toLong('127.0.0.1'); // 2130706433
 ip.fromLong(2130706433); // '127.0.0.1'
 ```
 
+## Todos
+- [x] transform via browserify
+- [x] publish to npm
+- [ ] add test in browser environment 
+
 ### License
 
 This software is licensed under the MIT License.
 
-Copyright Fedor Indutny, 2012.
+Copyright Donghua Liu, 2019.
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the
