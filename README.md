@@ -16,7 +16,9 @@ npm install browserify-ip
 Get your ip address, compare ip addresses, validate ip addresses, etc.
 
 ```js
-import ip = from 'browserify-ip';
+import ip from "browserify-ip";
+// or
+import { cidr, isPrivate, cidrSubnet } from "browserify-ip";
 
 ip.address() // my ip address
 ip.isEqual('::1', '::0:1'); // true
